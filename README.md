@@ -6,25 +6,24 @@
 ## 2. Methodology
 ### 2.1 Importing Necessary Packages
 - pandas: For data manipulation and analysis.
-- NumPy: For numerical operations and array manipulation.
 - TensorFlow: For building and training the deep learning model.
 - scikit-learn: For data splitting, model evaluation, and other machine learning utilities.
-- nltk: For natural language processing tasks such as lemmatization and tokenization.
+- nltk: For natural language processing tasks such as lemmatization.
 - emoji: For removing emojis from the text data.
-- seaborn: For creating informative and visually appealing statistical graphics.
+- seaborn: For creating informative and visual graphics.
 - matplotlib: For general plotting and visualization.
-- joblib: For efficient saving and loading of trained models.
+- joblib: For saving and loading of trained models.
 
 ### 2.2 Data Source and Understanding  
-The training data for this project was taken from https://zenodo.org/records/8023142. The dataset is the collection reddit comments of 3000 samples same meaning but include both formal and informal text syles. So, the total dataset is 6000 samples mix of formal and informal texts.
+The training data for this project was taken from https://zenodo.org/records/8023142. The dataset is the collection of reddit comments of 3000 samples same meaning but include both formal and informal text syles. So, the total dataset is 6000 samples mix of formal and informal texts.
 To understand, extract some samples from dataset and checking the shape of the dataset etc.
 ### 2.3 Data Preprocessing:
-- Firstly,the dataset was uploaded on google drive and mount with Colab notebook.
-- As the dataset is without label, split two 2 new data fram formal and informal respectively. Then add labels 0 and 1 manually and combine again as a final dataset. 
+- Firstly, the dataset was uploaded on google drive and mount with Colab notebook.
+- The dataset is without label. So, split into two 2 new data frames, formal and informal, respectively. Then add labels 0 and 1 manually and combine as a final dataset. 
 #### Text Cleaning:
 - Convert all text to lowercase.
 - Remove URLs using regular expressions.
-- Remove emojis using the emoji library. Because the data is from Reddit comment it include emojis and we need to remove it.
+- Remove emojis using the emoji library. Because the data is from Reddit comments it include emojis and we need to remove it.
 #### Text Normalization:
 - Perform lemmatization using the WordNetLemmatizer from the nltk library to reduce words to their base forms.
 - Reason:  Lemmatization is more accurate base forms that are real words, which helps in understanding the text better and more readable and meaningful, making it suitable for our project.
