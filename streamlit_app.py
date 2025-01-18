@@ -23,7 +23,7 @@ st.title("Check Your Text Here!....")
 st.subheader("Formal or Informal Detector")
 Input_text = st.text_input("Text ", placeholder= "Input Your Text Here...")
 
-if (st.button('Predict Text Tone..'))
+if (st.button('Predict Text Tone..')):
     try:
         if Input_text.strip() == "":
             st.error("Please enter some text before clicking the button.")
