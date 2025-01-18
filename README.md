@@ -15,9 +15,9 @@
 - joblib: For saving and loading of trained models.
 
 ### 2.2 Data Source and Understanding  
-The training data for this project was taken from https://zenodo.org/records/8023142. The dataset is the collection of reddit comments of 3000 samples same meaning but include both formal and informal text syles. So, the total dataset is 6000 samples mix of formal and informal texts.
+The training data for this project was taken from https://zenodo.org/records/8023142. The dataset is the collection of reddit comments of 3000 samples same meaning but include both formal and informal text styles. So, the total dataset is 6000 samples mix of formal and informal texts.
 To understand, extract some samples from dataset and checking the shape of the dataset etc.
-### 2.3 Data Preprocessing:
+### 2.3 Data Preprocessing
 - Firstly, the dataset was uploaded on google drive and mount with Colab notebook.
 - The dataset is without label. So, split into two 2 new data frames, formal and informal, respectively. Then add labels 0 and 1 manually and combine as a final dataset. 
 #### Text Cleaning:
