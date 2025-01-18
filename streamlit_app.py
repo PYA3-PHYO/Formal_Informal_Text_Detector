@@ -7,7 +7,6 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
 
 # Load the saved model
-
 model = load_model("Model/the_best_model.keras")
 #load saved tokenizor
 tokenizer = joblib.load('Model/custom_tokenizer.joblib')
@@ -19,22 +18,12 @@ def model_prediction(X_test, model):
         return "Formal";
     else:
         return "Informal";
-
 #UI 
 st.title("Check Your Text Here!....")
 st.subheader("Formal or Informal Detector")
-
-
 Input_text = st.text_input("Text ", placeholder= "Input Your Text Here...")
 
-if 'button' not in st.session_state:
-    st.session_state.button = False
-
-def click_button():
-    st.session_state.button = True
-
-st.button('Predict Text Tone..', on_click=click_button)
-if st.session_state.button:
+if (st.button('Predict Text Tone..'))
     try:
         if Input_text.strip() == "":
             st.error("Please enter some text before clicking the button.")
