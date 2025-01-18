@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ecb2983f-b6c7-4141-8d46-dd5a74a040a6)# Project Title: Formal and Informal Text Detector
+# Project Title: Formal and Informal Text Detector
 ## 1. Introduction
 ### 1.1 Project Overview: This project aims to develop a machine learning model capable of accurately classifying given text as either formal or informal. This classification can have various applications, assisting in content moderation for online platforms, and enhancing the quality of chatbots and conversational AI systems.
 
@@ -14,12 +14,12 @@
 - matplotlib: For general plotting and visualization.
 - joblib: For efficient saving and loading of trained models.
 
-### 2.2 Data Understanding  
-Data Source: The training data for this project was taken from https://zenodo.org/records/8023142. The dataset is the collection reddit comment fro 3000 samples same meaning but include both formal and informal syles. So, the total dataset is 6000 samples mix of formal and informal texts.
-Extract some samples from dataset and checking the shape of the dataset etc.
+### 2.2 Data Source and Understanding  
+The training data for this project was taken from https://zenodo.org/records/8023142. The dataset is the collection reddit comments of 3000 samples same meaning but include both formal and informal text syles. So, the total dataset is 6000 samples mix of formal and informal texts.
+To understand, extract some samples from dataset and checking the shape of the dataset etc.
 ### 2.3 Data Preprocessing:
-Firstly, dataset was uploaded on google drive and mount with Colab notebook.
-As the dataset is without label, split two 2 new data fram formal and informal respectively. Then add labels 0 and 1 manually and combine again asa final dataset. 
+- Firstly,the dataset was uploaded on google drive and mount with Colab notebook.
+- As the dataset is without label, split two 2 new data fram formal and informal respectively. Then add labels 0 and 1 manually and combine again asa final dataset. 
 #### Text Cleaning:
 - Convert all text to lowercase.
 - Remove URLs using regular expressions.
@@ -35,10 +35,7 @@ As the dataset is without label, split two 2 new data fram formal and informal r
 ### 2.4 Modelling:
 - Model Choice: A Bidirectional LSTM model is chosen for this task  because LSTMs are well-suited for sequential data like text, as they can effectively capture long-range dependencies. Bidirectionality allows the model to process information in both forward and backward directions, enhancing its ability to understand the context of words within a sentence.
 
-
 #### Model Architecture:
-
-
 - Embedding Layer: Maps each word to a dense vector representation, capturing semantic relationships between words.
 - Bidirectional LSTM Layer: Processes the input sequence in both forward and backward directions, capturing contextual information from both directions.
 - Dense Layers:
@@ -58,12 +55,10 @@ As the dataset is without label, split two 2 new data fram formal and informal r
    - A confusion matrix is generated to visualize the model's predictions and identify areas of misclassification
    - ![Screenshot 2025-01-18 141703](https://github.com/user-attachments/assets/a57f9bd6-92a3-4355-be23-7966c780abd4)
 
-## 3. Streamlit Web Application
-
+## 3. Streamlit
 ### 3.1 Overview
 The project includes a user-friendly web application built using **Streamlit**, which allows users to input text and receive real-time predictions about whether the text is formal or informal. 
 ![Screenshot 2025-01-18 142029](https://github.com/user-attachments/assets/f9701ac2-7fbd-4ee3-bfc9-5352e21dd665)
-
 
 ### 3.2 User Interface
 - **Input Field**: Users can enter any text they wish to analyze.
@@ -75,17 +70,17 @@ The application includes error handling to ensure smooth user experience:
 - **Single Word Input**: The application checks if the input consists of more than one word, and an appropriate message is displayed if not.
 
 ## 4. Running the Project
-
-### 4.1 Prerequisites
-Ensure that you have the following installed on your system:
+### 4.1 Project Resources
+   - Dataset -> Dataset/Training data source.csv
+   - Model Training Source code -> Model/Model_training_source_code.ipynb
+   - Tokenizore -> Model/custom_tokenizer.joblib
+   - Model -> Model/the_best_model.keras
+   - Streamlit app -> streamlit_app.py
+   - 
+### 4.2 Prerequisites
 - Python (version 3.6 or higher)
-- pip (Python package manager)
+- pip 
 
  ```bash
    pip install -r requirements.txt
-
    streamlit run stream_app.py
-
-
-
-
