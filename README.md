@@ -1,4 +1,4 @@
-# Project Title: Formal and Informal Text Detector
+![image](https://github.com/user-attachments/assets/ecb2983f-b6c7-4141-8d46-dd5a74a040a6)# Project Title: Formal and Informal Text Detector
 ## 1. Introduction
 ### 1.1 Project Overview: This project aims to develop a machine learning model capable of accurately classifying given text as either formal or informal. This classification can have various applications, assisting in content moderation for online platforms, and enhancing the quality of chatbots and conversational AI systems.
 
@@ -49,10 +49,43 @@ As the dataset is without label, split two 2 new data fram formal and informal r
    - The model is trained using the Adam optimizer and binary crossentropy loss.
    - Early stopping is implemented to prevent overfitting by monitoring validation loss and stopping training when it starts to increase.
    - The model is trained for a maximum of 10 epochs with a batch size of 32.
-## 2.4 Model Evaluation:
+### 2.4 Model Evaluation:
    - Accuracy: 89.16%.
    - Precision: 89.2%
    - Recall: 89.2%
    - F1-score: 89.16%
 - Confusion Matrix:
    - A confusion matrix is generated to visualize the model's predictions and identify areas of misclassification
+   - ![Screenshot 2025-01-18 141703](https://github.com/user-attachments/assets/a57f9bd6-92a3-4355-be23-7966c780abd4)
+
+## 3. Streamlit Web Application
+
+### 3.1 Overview
+The project includes a user-friendly web application built using **Streamlit**, which allows users to input text and receive real-time predictions about whether the text is formal or informal. 
+![Screenshot 2025-01-18 142029](https://github.com/user-attachments/assets/f9701ac2-7fbd-4ee3-bfc9-5352e21dd665)
+
+
+### 3.2 User Interface
+- **Input Field**: Users can enter any text they wish to analyze.
+- **Button**: A button labeled "Check the text tone.." triggers the model to classify the input text as formal or informal.
+
+### 3.3 Error Handling
+The application includes error handling to ensure smooth user experience:
+- **Empty Input**: If the user submits an empty input, an error message prompts them to enter text.
+- **Single Word Input**: The application checks if the input consists of more than one word, and an appropriate message is displayed if not.
+
+## 4. Running the Project
+
+### 4.1 Prerequisites
+Ensure that you have the following installed on your system:
+- Python (version 3.6 or higher)
+- pip (Python package manager)
+
+ ```bash
+   pip install -r requirements.txt
+
+   streamlit run stream_app.py
+
+
+
+
