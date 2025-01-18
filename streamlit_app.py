@@ -13,27 +13,43 @@ tokenizer = joblib.load('Model/custom_tokenizer.joblib')
 
 def model_prediction(X_test, model):
     y_pred = model.predict(X_test)
-    Threshold = 0.4
-    if (y_pred[0][0]>=Threshold):
-        return "Formal";
+    value = y_pred[0][0]
+    if (value>=Threshold):
+        ans = "Formal"
+        return ans;
     else:
-        return "Informal";
+        ans = "Informal"
+        return ans;
+
 #UI 
 st.title("Check Your Text Here!....")
 st.subheader("Formal or Informal Detector")
+multi = '''This project is a Formal vs. Informal Text Detector that uses Natural Language Processing (NLP) techniques to classify the tone of a given text as either formal or informal. 
+
+The system is built using a custom tokenizer and a deep learning model,(RNN, BiLSTM), trained to recognize language patterns typical of formal and informal writing. 
+
+Users can input any text into the interface, and the model will analyze it, providing immediate feedback on the text's tone.
+'''
+st.markdown(multi)
+
+st.subheader("Adjust Threshold Value")
+st.write("Near 0 mean Informal and 1 for Formal. Adjust as you preferences, default is 0.4")
+Threshold = st.slider("Value", 0.0, 1.0, 0.4)
+
 Input_text = st.text_input("Text ", placeholder= "Input Your Text Here...")
 
 if (st.button('Predict Text Tone..')):
     try:
         if Input_text.strip() == "":
             st.error("Please enter some text before clicking the button.")
+        elif len(Input_text.split()) <= 1:
+            st.error("Please enter more than one word.")
         else:
             text_sequences = tokenizer.texts_to_sequences([Input_text])
-            if not text_sequences or not any(text_sequences[0]):
-                raise ValueError("Tokenizer returned an empty sequence. Please check the input text.")
             text_padded = pad_sequences(text_sequences, maxlen=150, truncating='post', padding='post')
             with st.spinner("Predicting..."):
-                prediction = model_prediction(text_padded, model)
-                st.write(f"The text you provided is {prediction}")
+                prediction_ans, prediction_value = model_prediction(text_padded, model)
+                prediction_value_round = round(prediction_value,2)
+                st.write(f"The text you provided is *{prediction_ans} Text*..")
     except Exception as e:
         st.error(f"An error occurred: {e}")
