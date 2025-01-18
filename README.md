@@ -32,6 +32,8 @@ To understand, extract some samples from dataset and checking the shape of the d
 #### Sequencing and Padding:
 - Convert text sequences into numerical representations using the texts_to_sequences method.
 - Pad sequences to a fixed length (max_length=150) using pad_sequences to ensure consistent input dimensions for the model.
+#### Train, Test Split
+- The data is splitted into 80% training, and 20% for testing.
 ### 2.4 Modelling:
 - Model Choice: A Bidirectional LSTM model is chosen for this task  because LSTMs are well-suited for sequential data like text, as they can effectively capture long-range dependencies. Bidirectionality allows the model to process information in both forward and backward directions, enhancing its ability to understand the context of words within a sentence.
 
