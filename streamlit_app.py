@@ -48,7 +48,7 @@ if (st.button('Predict Text Tone..')):
             text_sequences = tokenizer.texts_to_sequences([Input_text])
             text_padded = pad_sequences(text_sequences, maxlen=150, truncating='post', padding='post')
             with st.spinner("Predicting..."):
-                prediction_ans, prediction_value = model_prediction(text_padded, model)
+                prediction_ans = model_prediction(text_padded, model)
                 prediction_value_round = round(prediction_value,2)
                 st.write(f"The text you provided is *{prediction_ans} Text*..")
     except Exception as e:
