@@ -1,6 +1,7 @@
 # Project Title: Formal and Informal Text Detector
 ## 1. Introduction
-### 1.1 Project Overview: This project aims to develop a machine learning model capable of accurately classifying given text as either formal or informal. This classification can have various applications, assisting in content moderation for online platforms, and enhancing the quality of chatbots and conversational AI systems.
+### 1.1 Project Overview: 
+   This project aims to develop a machine learning model capable of accurately classifying given text as either formal or informal. This classification can have various applications, assisting in content moderation for online platforms, and enhancing the quality of chatbots and conversational AI systems.
 
 ## 2. Methodology
 ### 2.1 Importing Necessary Packages
@@ -19,7 +20,7 @@ The training data for this project was taken from https://zenodo.org/records/802
 To understand, extract some samples from dataset and checking the shape of the dataset etc.
 ### 2.3 Data Preprocessing:
 - Firstly,the dataset was uploaded on google drive and mount with Colab notebook.
-- As the dataset is without label, split two 2 new data fram formal and informal respectively. Then add labels 0 and 1 manually and combine again asa final dataset. 
+- As the dataset is without label, split two 2 new data fram formal and informal respectively. Then add labels 0 and 1 manually and combine again as a final dataset. 
 #### Text Cleaning:
 - Convert all text to lowercase.
 - Remove URLs using regular expressions.
